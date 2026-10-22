@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171923" />
+  <meta name="description" content="Sign in to your Taskly workspace." />
+  <title>Sign in — Taskly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" /><link rel="stylesheet" href="css/login.css" />
+  <script src="js/config.js" defer></script><script src="js/login.js" defer></script>
+</head>
+<body class="auth-page login-page">
+  <main class="auth-layout">
+    <section class="auth-visual" aria-label="Taskly introduction">
+      <a class="brand brand-light" href="login.html" aria-label="Taskly home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M6.2 12.2 10 16l8-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2.8 20.4 7.6v8.8L12 21.2l-8.4-4.8V7.6L12 2.8Z" stroke="currentColor" stroke-width="1.5" opacity=".65"/></svg></span><span class="brand-name">taskly<span class="brand-period">.</span></span></a>
+      <div class="visual-content">
+        <div class="visual-badge"><span class="badge-pulse"></span> A calmer way to get things done</div>
+        <h1>Make today<br />count<span class="visual-period">.</span></h1>
+        <p class="visual-description">Your ideas deserve action. Bring your tasks into one clear space and make progress at your own pace.</p>
+        <div class="visual-board" aria-hidden="true">
+          <div class="mini-board-header"><div><span class="mini-board-eyebrow">YOUR FOCUS</span><strong>Today's priorities</strong></div><span class="mini-board-menu">···</span></div>
+          <div class="mini-task mini-task-done"><span class="mini-checkbox checked">✓</span><span class="mini-task-copy"><strong>Plan the week ahead</strong><small>Personal</small></span><span class="mini-task-tag tag-green">Done</span></div>
+          <div class="mini-task"><span class="mini-checkbox"></span><span class="mini-task-copy"><strong>Build something great</strong><small>Project work</small></span><span class="mini-task-tag tag-purple">In progress</span></div>
+          <div class="mini-task"><span class="mini-checkbox"></span><span class="mini-task-copy"><strong>Take a mindful break</strong><small>Just for you</small></span><span class="mini-task-tag tag-amber">Later</span></div>
+          <div class="mini-board-progress"><div class="mini-progress-track"><span></span></div><div><strong>1 of 3</strong><small> little wins today</small></div></div>
+        </div>
+      </div>
+      <div class="visual-footer"><span>© 2026 Taskly</span><span>Less clutter. More clarity.</span></div>
+      <div class="visual-orb orb-one"></div><div class="visual-orb orb-two"></div>
+    </section>
+
+    <section class="auth-panel">
+      <div class="auth-panel-inner">
+        <div class="mobile-brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M6.2 12.2 10 16l8-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2.8 20.4 7.6v8.8L12 21.2l-8.4-4.8V7.6L12 2.8Z" stroke="currentColor" stroke-width="1.5" opacity=".65"/></svg></span><span class="brand-name">taskly<span class="brand-period">.</span></span></div>
+        <div class="auth-heading"><span class="auth-eyebrow">WELCOME BACK</span><h2>Good to have you back.</h2><p>Pick up where you left off.</p></div>
+        <form class="auth-form" id="login-form" novalidate>
+          <div class="input-group"><label for="username">Username</label><div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20v-1.2a6.5 6.5 0 0 1 13 0V20"/></svg><input id="username" name="username" type="text" placeholder="Enter your username" minlength="3" maxlength="250" autocomplete="username" required /></div><small class="field-error" id="username-error"></small></div>
+          <div class="input-group"><div class="label-line"><label for="password">Password</label><a class="subtle-link" href="#password" id="forgot-password">Need help?</a></div><div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10" width="15" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required /><button class="toggle-password" type="button" data-toggle-password="password" aria-label="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.8 12s3.2-6.3 9.2-6.3 9.2 6.3 9.2 6.3-3.2 6.3-9.2 6.3S2.8 12 2.8 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></button></div><small class="field-error" id="password-error"></small></div>
+          <div class="form-message" id="login-message" role="status" aria-live="polite"></div>
+          <button class="button auth-submit" id="login-submit" type="submit"><span>Sign in</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <div class="auth-divider"><span></span><small>YOUR NEXT CHAPTER STARTS HERE</small><span></span></div>
+        <p class="auth-switch">New to Taskly? <a href="signup.html">Create an account <span>↗</span></a></p>
+        <p class="demo-hint" id="demo-hint"><span class="demo-dot"></span>Demo mode is on — use any username and password.</p>
+        <p class="auth-terms">By continuing, you agree to keep your workspace kind and focused.</p>
+      </div>
+    </section>
+  </main>
+  <div class="auth-toast" id="auth-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

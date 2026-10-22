@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+  --ink: #222332;
+  --ink-strong: #191a28;
+  --muted: #85889b;
+  --muted-dark: #6f7286;
+  --line: #ececf3;
+  --surface: #ffffff;
+  --canvas: #f7f7fb;
+  --purple: #7868f6;
+  --purple-dark: #6352e7;
+  --purple-soft: #f0edff;
+  --green: #35a879;
+  --amber: #e4a64c;
+  --red: #e56e7a;
+  --sidebar: #191a27;
+  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Manrope", "DM Sans", sans-serif;
+  --shadow-soft: 0 12px 40px rgba(30, 29, 62, .055);
+  --shadow-float: 0 24px 80px rgba(22, 20, 55, .18);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(120, 104, 246, .32);
+  outline-offset: 3px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+::selection {
+  color: #fff;
+  background: #7868f6;
+}

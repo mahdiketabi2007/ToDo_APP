@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171923" />
+  <meta name="description" content="Create your Taskly workspace." />
+  <title>Create account — Taskly</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" /><link rel="stylesheet" href="css/login.css" /><link rel="stylesheet" href="css/signup.css" />
+  <script src="js/config.js" defer></script><script src="js/signup.js" defer></script>
+</head>
+<body class="auth-page signup-page">
+  <main class="auth-layout">
+    <section class="auth-visual" aria-label="Start with Taskly">
+      <a class="brand brand-light" href="login.html" aria-label="Taskly home"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M6.2 12.2 10 16l8-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2.8 20.4 7.6v8.8L12 21.2l-8.4-4.8V7.6L12 2.8Z" stroke="currentColor" stroke-width="1.5" opacity=".65"/></svg></span><span class="brand-name">taskly<span class="brand-period">.</span></span></a>
+      <div class="visual-content">
+        <div class="visual-badge"><span class="badge-pulse"></span> Start small. Make it count.</div>
+        <h1>Your goals,<br />within reach<span class="visual-period">.</span></h1>
+        <p class="visual-description">A good plan doesn't need to be complicated. Start with one task, find your rhythm, and build momentum.</p>
+        <div class="signup-quote-card"><span class="quote-mark">“</span><blockquote>You don't have to see the whole staircase. Just take the first step.</blockquote><div class="quote-bottom"><span class="quote-avatar">✦</span><span><strong>One thing at a time</strong><small>A little reminder from Taskly</small></span></div><div class="quote-decoration"></div></div>
+        <div class="benefit-row"><span class="benefit-check">✓</span><span>All your tasks, beautifully organized.</span></div><div class="benefit-row"><span class="benefit-check">✓</span><span>A quieter space to focus on what matters.</span></div>
+      </div>
+      <div class="visual-footer"><span>© 2026 Taskly</span><span>Less clutter. More clarity.</span></div>
+      <div class="visual-orb orb-one"></div><div class="visual-orb orb-two"></div>
+    </section>
+    <section class="auth-panel">
+      <div class="auth-panel-inner">
+        <div class="mobile-brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M6.2 12.2 10 16l8-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2.8 20.4 7.6v8.8L12 21.2l-8.4-4.8V7.6L12 2.8Z" stroke="currentColor" stroke-width="1.5" opacity=".65"/></svg></span><span class="brand-name">taskly<span class="brand-period">.</span></span></div>
+        <div class="auth-heading"><span class="auth-eyebrow">A FRESH START</span><h2>Create your account.</h2><p>Make a little space for your next big thing.</p></div>
+        <form class="auth-form" id="signup-form" novalidate>
+          <div class="input-group"><label for="username">Username</label><div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20v-1.2a6.5 6.5 0 0 1 13 0V20"/></svg><input id="username" name="username" type="text" placeholder="Choose a username" minlength="3" maxlength="250" autocomplete="username" required /></div><small class="field-hint">At least 3 characters.</small><small class="field-error" id="username-error"></small></div>
+          <div class="input-group"><label for="password">Password</label><div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10" width="15" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><input id="password" name="password" type="password" placeholder="Create a strong password" minlength="8" autocomplete="new-password" required /><button class="toggle-password" type="button" data-toggle-password="password" aria-label="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.8 12s3.2-6.3 9.2-6.3 9.2 6.3 9.2 6.3-3.2 6.3-9.2 6.3S2.8 12 2.8 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></button></div><div class="password-strength" id="password-strength" aria-label="Password strength"><span></span><span></span><span></span><span></span></div><small class="field-hint" id="password-hint">Use at least 8 characters.</small><small class="field-error" id="password-error"></small></div>
+          <div class="input-group"><label for="confirm-password">Confirm password</label><div class="input-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4.2 4.2L19 6.5"/><path d="M20 12a8 8 0 1 1-4-6.9"/></svg><input id="confirm-password" name="confirm-password" type="password" placeholder="Enter your password again" autocomplete="new-password" required /><button class="toggle-password" type="button" data-toggle-password="confirm-password" aria-label="Show password"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.8 12s3.2-6.3 9.2-6.3 9.2 6.3 9.2 6.3-3.2 6.3-9.2 6.3S2.8 12 2.8 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></button></div><small class="field-error" id="confirm-password-error"></small></div>
+          <div class="form-message" id="signup-message" role="status" aria-live="polite"></div>
+          <button class="button auth-submit" id="signup-submit" type="submit"><span>Create account</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </form>
+        <p class="auth-switch">Already have an account? <a href="login.html">Sign in <span>↗</span></a></p>
+        <p class="demo-hint" id="demo-hint"><span class="demo-dot"></span>Demo mode is on — no account is created on a server.</p>
+        <p class="auth-terms">Your workspace should work for you, not the other way around.</p>
+      </div>
+    </section>
+  </main>
+  <div class="auth-toast" id="auth-toast" role="status" aria-live="polite"></div>
+</body>
+</html>

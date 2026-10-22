@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#171923" />
+  <meta name="description" content="Taskly — a clean, focused space to organize your work." />
+  <title>Taskly — Your workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <script src="js/config.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</head>
+<body class="dashboard-page">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" aria-label="Taskly home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M6.2 12.2 10 16l8-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 2.8 20.4 7.6v8.8L12 21.2l-8.4-4.8V7.6L12 2.8Z" stroke="currentColor" stroke-width="1.5" opacity=".65"/></svg>
+        </span>
+        <span class="brand-name">taskly<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <button class="nav-item is-active" type="button" data-filter="all">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="7" height="7" rx="2"/><rect x="13.5" y="13.5" width="7" height="7" rx="2"/></svg>
+          <span>Overview</span><span class="nav-count" id="nav-all-count">0</span>
+        </button>
+        <button class="nav-item" type="button" data-filter="active">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.2 2"/></svg>
+          <span>In progress</span><span class="nav-count" id="nav-active-count">0</span>
+        </button>
+        <button class="nav-item" type="button" data-filter="completed">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m8.2 12.2 2.5 2.5 5.2-5.3"/></svg>
+          <span>Completed</span><span class="nav-count" id="nav-completed-count">0</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="sidebar-note-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z"/></svg></span>
+          <p class="sidebar-note-title">Small steps add up.</p>
+          <p class="sidebar-note-copy">Keep showing up. You're doing great.</p>
+        </div>
+        <button class="profile-button" type="button" id="profile-button" aria-label="Sign out">
+          <span class="avatar" id="sidebar-avatar">M</span>
+          <span class="profile-meta"><strong id="sidebar-username">Mahdi</strong><small>Personal workspace</small></span>
+          <svg class="logout-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17l5-5-5-5M15 12H3M12 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-6"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <div class="breadcrumbs"><span>Workspace</span><span class="breadcrumb-slash">/</span><strong id="breadcrumb-current">Overview</strong></div>
+        <div class="topbar-actions">
+          <span class="today-label" id="today-label">Today</span>
+          <span class="topbar-avatar" id="topbar-avatar">M</span>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="welcome-row">
+          <div>
+            <p class="eyebrow" id="welcome-date">YOUR SPACE, YOUR PACE</p>
+            <h1 id="welcome-heading">Good to see you, Mahdi<span class="heading-sparkle"> ✦</span></h1>
+            <p class="page-subtitle">A little progress each day adds up to big results.</p>
+          </div>
+          <button class="button button-primary" id="new-task-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>New task</span>
+          </button>
+        </section>
+
+        <section class="stats-grid" aria-label="Task summary">
+          <article class="stat-card stat-card-total">
+            <div class="stat-topline"><span class="stat-label">Total tasks</span><span class="stat-icon stat-icon-purple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h12M8 12h12M8 18h12M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></span></div>
+            <div class="stat-value" id="stat-total">0</div><div class="stat-footnote"><span class="stat-dot purple-dot"></span>Everything on your plate</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline"><span class="stat-label">In progress</span><span class="stat-icon stat-icon-amber"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3 2"/></svg></span></div>
+            <div class="stat-value" id="stat-active">0</div><div class="stat-footnote"><span class="stat-dot amber-dot"></span>One step at a time</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-topline"><span class="stat-label">Completed</span><span class="stat-icon stat-icon-green"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/><circle cx="12" cy="12" r="9"/></svg></span></div>
+            <div class="stat-value" id="stat-completed">0</div><div class="stat-footnote"><span class="stat-dot green-dot"></span>Look how far you've come</div>
+          </article>
+        </section>
+
+        <section class="focus-card" aria-label="Progress overview">
+          <div class="focus-copy">
+            <div class="focus-kicker"><span class="focus-kicker-dot"></span>YOUR MOMENTUM</div>
+            <h2>Make room for what matters.</h2>
+            <p>Every finished task is a win. Keep your focus on the next small step.</p>
+          </div>
+          <div class="progress-overview">
+            <div class="progress-ring" id="progress-ring" style="--progress: 0deg"><div class="progress-ring-inner"><strong id="progress-percent">0%</strong><span>complete</span></div></div>
+            <div class="progress-details"><strong id="progress-caption">You're just getting started</strong><span id="progress-subcaption">Your progress will show up here.</span></div>
+          </div>
+          <div class="focus-decoration focus-decoration-one"></div><div class="focus-decoration focus-decoration-two"></div>
+        </section>
+
+        <section class="tasks-section" aria-labelledby="tasks-heading">
+          <div class="tasks-header">
+            <div><p class="section-overline">STAY ON TRACK</p><h2 id="tasks-heading">Your tasks <span class="task-total-pill" id="visible-task-count">0</span></h2></div>
+            <label class="search-box" for="task-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg><input id="task-search" type="search" placeholder="Search tasks..." autocomplete="off" /><kbd>⌘ K</kbd></label>
+          </div>
+          <div class="task-toolbar">
+            <div class="filter-tabs" role="group" aria-label="Filter tasks">
+              <button class="filter-tab is-selected" type="button" data-filter="all">All tasks</button>
+              <button class="filter-tab" type="button" data-filter="active">In progress</button>
+              <button class="filter-tab" type="button" data-filter="completed">Completed</button>
+            </div>
+            <button class="sort-button" id="sort-button" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M7 12h10M10 17h4"/></svg>Newest first</button>
+          </div>
+
+          <div class="task-list" id="task-list" aria-live="polite"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <div class="empty-illustration"><span class="empty-spark empty-spark-a">✦</span><svg viewBox="0 0 80 80" aria-hidden="true"><rect x="19" y="13" width="42" height="54" rx="8"/><path d="M29 29h22M29 39h22M29 49h13"/><path d="m49 57 4 4 8-9"/></svg><span class="empty-spark empty-spark-b">✧</span></div>
+            <h3 id="empty-title">A clear path ahead.</h3><p id="empty-copy">Add your first task and turn your plans into progress.</p>
+            <button class="button button-primary" id="empty-add-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Create a task</button>
+          </div>
+          <p class="list-footer" id="list-footer">You're all caught up. Keep it going ✨</p>
+        </section>
+
+        <footer class="app-footer"><span>Made for focus, built for progress.</span><span>Taskly <span class="footer-dot">·</span> v1.0</span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="task-modal" hidden>
+    <section class="task-modal" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+      <div class="modal-header"><div><span class="modal-kicker">MAKE IT HAPPEN</span><h2 id="modal-heading">Create a task</h2><p>Give your next step a name.</p></div><button class="icon-button modal-close" id="modal-close" type="button" aria-label="Close dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <form id="task-form">
+        <label class="field-label" for="task-title">Task name <span>*</span></label><input class="text-field" id="task-title" name="title" type="text" maxlength="150" placeholder="e.g. Finish the API documentation" required />
+        <div class="field-label-row"><label class="field-label" for="task-description">Description <span class="optional-label">OPTIONAL</span></label></div>
+        <textarea class="text-field text-area" id="task-description" name="description" rows="4" placeholder="Add a few details to help you get started..."></textarea>
+        <p class="form-error" id="task-form-error" aria-live="polite"></p>
+        <div class="modal-actions"><button class="button button-quiet" id="modal-cancel" type="button">Cancel</button><button class="button button-primary" id="task-submit" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>Save task</span></button></div>
+      </form>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span class="toast-check">✓</span><span id="toast-message">Done</span></div>
+    <!-- Confirmation Modal -->
+  <div class="confirm-modal" id="confirm-modal" hidden>
+    <div class="confirm-backdrop" data-confirm-cancel></div>
+
+    <section
+      class="confirm-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="confirm-title"
+      aria-describedby="confirm-message"
+    >
+      <div class="confirm-icon" id="confirm-icon">!</div>
+
+      <h2 id="confirm-title">Are you sure?</h2>
+
+      <p id="confirm-message">
+        This action cannot be undone.
+      </p>
+
+      <div class="confirm-actions">
+        <button type="button" id="confirm-cancel" class="button">
+          Cancel
+        </button>
+
+        <button type="button" id="confirm-accept" class="button">
+          Confirm
+        </button>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
